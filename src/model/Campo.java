@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @Table(name= "campo")
 public class Campo {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "id", unique = true, nullable = true)
 	private int id_campo;
 
@@ -29,6 +29,9 @@ public class Campo {
 	@OneToOne
 	@JoinColumn(name = "id_bodega")
 	private Bodega bodega;
+	
+	@Column(name = "recolectado", columnDefinition = "boolean default false")
+	private boolean recolectado;
 	
 	public Campo() {}
 
@@ -51,5 +54,10 @@ public class Campo {
 		ArrayList<Vid> vids = new ArrayList<>();
 		vids.addAll(this.vids);
 		return vids;
+	}
+	
+	public void recolected()
+	{
+		  this.recolectado = true;
 	}
 }

@@ -78,6 +78,7 @@ public class Manager {
 
 	private void vendimia() {
 		this.b.getVids().addAll(this.c.getVids());
+		c.recolected();
 		
 		tx = session.beginTransaction();
 		session.save(b);
