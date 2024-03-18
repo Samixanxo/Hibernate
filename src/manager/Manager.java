@@ -44,6 +44,7 @@ public class Manager {
 		getEntrada();
 		manageActions();
 		showAllCampos();
+		showMaxBodega();
 		session.close();
 	}
 
@@ -135,6 +136,17 @@ public class Manager {
 		}
 		tx.commit();
 	}
+	
+	private void showMaxBodega() {
+	    tx = session.beginTransaction();
+	    Query query = session.createQuery("FROM Bodega ORDER BY id DESC");
+	    query.setMaxResults(1); 
+	    Bodega maxBodega = (Bodega) query.uniqueResult(); 
+	    System.out.println("Bodega con el ID más alto: " + maxBodega);
+	    tx.commit();
+	}
+	
+	
 
 	
 }
