@@ -44,5 +44,15 @@ public class Bodega {
 	public List<Vid> getVids() {
 		return this.vids;
 	}
+
+	public String getName() {
+		
+		return this.nombre;
+	}
+	
+	public void setName(String name) {
+		this.nombre = name;
+	
+	}
 	
 }
