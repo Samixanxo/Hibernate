@@ -18,4 +18,12 @@ public class Entrada {
 	public String getInstruccion() {
 		return this.instruccion;
 	}
+	
+	public void setInstruccion(String instruccion) {
+		this.instruccion = instruccion;
+	}
+	
+	public void setId(String id) {
+		this.valor = id;
+	}
 }

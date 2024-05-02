@@ -20,7 +20,7 @@ public class Campo {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = true)
-    private int id_campo;
+    private String id_campo; // Cambiado el tipo de dato a String
 
     @OneToMany
     @JoinColumn(name = "campo_id")
@@ -58,5 +58,9 @@ public class Campo {
 
     public void recolected() {
         this.recolectado = true;
+    }
+    
+    public void setId(String id) {
+        this.id_campo = id;
     }
 }
